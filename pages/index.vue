@@ -30,7 +30,7 @@
           </ul>
         </div>
       </section>
-    <Footer/>
+    <LazyFooter/>
   </div>
 </template>
 
@@ -55,9 +55,10 @@ export default {
       ]
     }
   },
-  async asyncData({ $axios }) {
-  const home = await $axios.$get('https://test-desarrollador-front.cclh.io/home/')
-  return { home }
+  async fetch() {
+      this.home = await fetch(
+        'https://test-desarrollador-front.cclh.io/home/'
+      ).then(res => res.json())
   }
 }
 </script>

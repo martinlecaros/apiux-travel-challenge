@@ -1,15 +1,23 @@
 <template>
-<p class="alert">destino</p>
+  <div>
+      <Header/>
+      <p class="alert">destino</p>
+      <p>{{ this.url }}</p>
+      <LazyFooter/>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Destino',
-  async asyncData({ $axios }) {
-  const home = await $axios.$get('https://test-desarrollador-front.cclh.io/punta-cana/')
-  console.log (home.main_photo)
-  return { home }
-  }
+  prop() {
+    url: ""
+  },
+  // async asyncData({ $params, $axios }) {
+  // const home = await $axios.$get('https://test-desarrollador-front.cclh.io/'+ ${params})
+  // console.log (home.main_photo)
+  // return { home }
+  // }
 }
 </script>
 

@@ -1,13 +1,13 @@
 <template>
   <div>
     <Header/>
-    <p>destinos</p>
+    <p>sobre nosotros</p>
     <LazyFooter/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Destinos'
+  name: 'sobre-nosotros'
 }
 </script>
