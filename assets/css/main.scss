@@ -1,0 +1,58 @@
+// COLORS VARIABLES
+$verde: #8BC34A;
+$verde-claro: #DCEDC8;
+$naranjo: #F9A825;
+$gris-a: #424242;
+$gris-b: #616161;
+$gris-c: #707070;
+$gris-d: #9E9E9E;
+$gris-e: #C9C9C9;
+$font-text: Roboto;
+// No funcionan las variables globales, tuve que copiarlas en cada page y componente. Por resolver.
+
+body {
+margin: 0px;
+padding: 0px;
+}
+
+.content {
+padding: 20px 40px;
+}
+
+//TEXT
+.title26px {
+color: $naranjo;
+font-family: $font-text;
+font-size: 1.625rem;
+font-weight: bold;
+}
+.title22px {
+color: $naranjo;
+font-family: $font-text;
+font-size: 1.375rem;
+font-weight: bold;
+}
+.text-recomendados-destinos-bold {
+    color: $gris-a;
+    font-family: $font-text;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.text-recomendados-destinos-normal {
+    color: $gris-a;
+    font-family: $font-text;
+    font-size: 1rem;
+    font-weight: normal;
+}
+.text-recomendados-destinos-light {
+    color: $gris-a;
+    font-family: $font-text;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        padding: 10px;
+    }
+}

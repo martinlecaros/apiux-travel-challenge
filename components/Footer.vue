@@ -6,17 +6,15 @@
         </NuxtLink>
 
         <div class="rrss">
-          <NuxtLink class="rrss-link" 
+          <a :href="item.link_url" class="rrss-link" 
                     v-for="item of data.footer.redes_sociales" 
                     :key="item.icono"
-                    :to="item.link_url"
                     :target="item.target_blank ? '_blank' : '_self'">
               <img :src="item.icono" :alt="item.link_url">
-          </NuxtLink>
+          </a>
         </div>
     </div>
-    <div v-html="data.footer.legal" id="down">
-    </div>
+    <div v-html="data.footer.legal" id="down"></div>
   </div>
 </template>
 
@@ -49,30 +47,52 @@ export default {
 
   #up {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 
     .logo {
       max-width: 164px;
     }
     .rrss {
       display: flex;
+      margin: 0px;
       .rrss-link {
-        padding-left: 13px;
+        padding: 0px 0px 0px 13px;
       }
     }
   }
 
-  #down {
+  #down::v-deep {
     display: flex;
     flex-direction: column;
+
+    p {
+      font-size: 12px;
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+    }
   }
-  div#down p {
-    font-size: 12px;
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  #footer {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    #up {
+      flex-direction: column;
+
+      .rrss {
+        margin: 20px 0px;
+        .rrss-link {
+          padding: 11px;
+        }
+      }
+    }
   }
-  
-  
 }
 </style>
